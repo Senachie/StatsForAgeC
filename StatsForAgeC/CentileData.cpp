@@ -6,7 +6,7 @@ namespace StatsForAge
 {
 	int AgeRange::GetMin(void) const { return min_; }
 	int AgeRange::GetMax(void) const { return max_; }
-	AgeRange& GenderRange::GetMaleRange(void) { return *maleRange_; }
+	AgeRange& GenderRange::GetMaleRange(void)   { return *maleRange_; }
 	AgeRange& GenderRange::GetFemaleRange(void) { return *femaleRange_; }
 
 	GenderRange::GenderRange(const int min, const int max) :iOwnRanges_(true) {
@@ -34,8 +34,8 @@ namespace StatsForAge
 		}
 	}
 
-	GenderRange& CentileData::GetGestAgeRange(void) const { return *gestAgeRange_; }
-	GenderRange& CentileData::GetAgeWeeksRange(void) const { return *ageWeeksRange_; }
+	GenderRange& CentileData::GetGestAgeRange  (void) const { return *gestAgeRange_  ; }
+	GenderRange& CentileData::GetAgeWeeksRange (void) const { return *ageWeeksRange_ ; }
 	GenderRange& CentileData::GetAgeMonthsRange(void) const { return *ageMonthsRange_; }
 
 	void CentileData::SetThrowUnderRange(bool value){ throwUnderRange_ = value; }

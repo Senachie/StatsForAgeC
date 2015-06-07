@@ -48,8 +48,8 @@ namespace StatsForAge
 	class STATSFORAGE_API CentileData
 	{
 	public:
-		GenderRange& GetGestAgeRange(void) const;
-		GenderRange& GetAgeWeeksRange(void) const;
+		GenderRange& GetGestAgeRange  (void) const;
+		GenderRange& GetAgeWeeksRange (void) const;
 		GenderRange& GetAgeMonthsRange(void) const;
 		double CumSnormForAge(double value, double daysOfAge, bool isMale, double totalWeeksGestAtBirth = TermGestation) const;
 		double ZForAge(double value, double daysOfAge, bool isMale, double totalWeeksGestAtBirth = TermGestation) const;
@@ -58,9 +58,9 @@ namespace StatsForAge
 
 	protected:
 		CentileData(GenderRange* gestAgeRange = nullptr, GenderRange* ageWeeksRange = nullptr, GenderRange* ageMonthsRange = nullptr) :
-			gestAgeRange_((gestAgeRange == nullptr) ? new GenderRange(23, 43) : gestAgeRange),
-			ageWeeksRange_((ageWeeksRange == nullptr) ? new GenderRange(4, 13) : ageWeeksRange),
-			ageMonthsRange_((ageMonthsRange == nullptr) ? new GenderRange(3, 240) : ageMonthsRange),
+			gestAgeRange_   ((gestAgeRange == nullptr) ? new GenderRange(23, 43) : gestAgeRange),
+			ageWeeksRange_  ((ageWeeksRange == nullptr) ? new GenderRange(4, 13) : ageWeeksRange),
+			ageMonthsRange_ ((ageMonthsRange == nullptr) ? new GenderRange(3, 240) : ageMonthsRange),
 			throwUnderRange_(false){
 			iOwnRange = (gestAgeRange == nullptr) & (ageWeeksRange == nullptr) << 1 & (ageMonthsRange == nullptr) << 2;
 		};
